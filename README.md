@@ -5,11 +5,11 @@
 
 This repository provides the implementation for **Hierarchical Prefetching (HP)**, a software-hardware instruction prefetcher designed for server applications. It also includes a reference implementation of the **Entangling Instruction Prefetcher (EIP)**.
 
-Our implementations are built upon the FDIP framework within [gem5-fdp](https://github.com/gem5-hpca/gem5-fdp).
+Our implementations are built upon the FDIP framework within [gem5-fdp](https://github.com/dhschall/gem5-fdp).
 
 ## How to use
 
-We included simple example scripts how to run HP or EIP:
+We included simple example scripts to show how to run HP or EIP:
 
 ```
 # build gem5
@@ -20,7 +20,7 @@ scons build/X86/gem5.opt
 ./example_eip.sh
 ```
 
-Since HP is a software-hardware co-designed prefetching method, we provide a convenient way to insert instructions within gem5. This involves using [m5ops](https://www.gem5.org/documentation/general_docs/m5ops/) to insert pseudo-instructions, specifically `m5_work_begin` and `m5_work_end`, at the call and return points of a Bundle. The first parameter for these pseudo-instructions is the `bundle-id`, and the second parameter is unused, defaulting to 0.
+Since HP is a software-hardware co-designed prefetching method, we provide a convenient way to insert instructions within gem5. This involves using [m5ops](https://www.gem5.org/documentation/general_docs/m5ops/) to insert pseudo-instructions, specifically `m5_work_begin` and `m5_work_end`, at the call and return points of a function that serves as the entry point for a Bundle. The first parameter for these pseudo-instructions is the `bundle-id`, and the second parameter is unused, defaulting to 0.
 
 ```
 m5_work_begin(bundle_id, 0);

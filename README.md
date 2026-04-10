@@ -7,6 +7,13 @@ This repository provides the implementation for **Hierarchical Prefetching (HP)*
 
 Our implementations are built upon the FDIP framework within [gem5-fdp](https://github.com/dhschall/gem5-fdp).
 
+## Note on EIP Implementation
+
+The EIP implementation in this repository is the version used in our HP study. 
+For a more recent gem5-focused discussion of EIP implementation details and an updated implementation, please also refer to their recent analysis and gem5 codebase:
+* **Paper:** [Untangling the Low Accuracy of the Entangling Instruction Prefetcher](https://ieeexplore.ieee.org/document/11449233)
+* **Code:** [https://github.com/alberto-ros/Entangling_Instruction_Prefetcher](https://github.com/alberto-ros/Entangling_Instruction_Prefetcher)
+
 ## How to use
 
 We included simple example scripts to show how to run HP or EIP:
